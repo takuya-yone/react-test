@@ -1,0 +1,11 @@
+
+
+  @font-face {
+    font-family: 'ApercuLight';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/FontsFree-Net-ApercuLight.ttf') format('ttf');
+  }
+  .body {
+    font-family: 'ApercuLight';
+  }

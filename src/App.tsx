@@ -8,8 +8,11 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Header from './component/Header';
 import { BrowserRouter, Route ,Link} from "react-router-dom";
-import pageA from "./page/pageA";
-import pageB from "./page/pageB";
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import pageA from "./pages/pageA";
+import pageB from "./pages/pageB";
+import "./fonts/FontsFree-Net-ApercuLight.ttf";
+import "./App.css";
 // import { , withRouter } from "react-router-dom";
 
 
@@ -23,10 +26,17 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
+const theme = createMuiTheme({
+  // typography: {
+  //   fontFamily: Font
+  // },
+});
+
 const App: React.FunctionComponent = () => {
   const classes = useStyles();
 
   return (
+    <ThemeProvider theme={theme}>
     <div className={classes.root}>
       <Header title="React Test!!"/>
 
@@ -37,6 +47,7 @@ const App: React.FunctionComponent = () => {
       <Route path="/pageB" component={pageB}></Route>
       </BrowserRouter>
     </div>
+    </ThemeProvider>
   );
 }
 
