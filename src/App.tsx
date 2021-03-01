@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Header from './component/Header';
-import { BrowserRouter, Route ,Link} from "react-router-dom";
+import { BrowserRouter,Switch, Route ,Link} from "react-router-dom";
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import pageA from "./pages/pageA";
 import pageB from "./pages/pageB";
@@ -38,13 +38,18 @@ const App: React.FunctionComponent = () => {
   return (
     <ThemeProvider theme={theme}>
     <div className={classes.root}>
-      <Header title="React Test!!"/>
 
       <BrowserRouter>
+      <Header title="React Test!!"/>
+{/* 
       <Link to="/pageA">pageA</Link>
-      <Link to="/pageB">pageB</Link>
+      <Link to="/pageB">pageB</Link> */}
+      <Switch>
+
       <Route path="/pageA" component={pageA}></Route> 
       <Route path="/pageB" component={pageB}></Route>
+      </Switch>
+
       </BrowserRouter>
     </div>
     </ThemeProvider>
