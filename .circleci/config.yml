@@ -1,17 +1,18 @@
 version: 2
-build_job:
-  docker:
-    - image: circleci/node
-  env:
-    CI: false
-  steps:
-    - checkout
-    - run: yarn install
-    - run: yarn build
-  store_artifacts:
-    path: ./build
+jobs:
+  build_job:
+    docker:
+      - image: circleci/node
+    env:
+      CI: false
+    steps:
+      - checkout
+      - run: yarn install
+      - run: yarn build
+    store_artifacts:
+      path: ./build
 workflows:
   version: 2
-  run_test:
+  run_build:
     jobs:
       - build_job
