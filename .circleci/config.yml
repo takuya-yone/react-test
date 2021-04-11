@@ -1,8 +1,9 @@
 version: 2
-jobs:
   build_job:
     docker:
       - image: circleci/node
+    env:
+      CI: false
     steps:
       - checkout
       - run: yarn install
