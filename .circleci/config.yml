@@ -7,8 +7,8 @@ jobs:
       - checkout
       - run: yarn install
       - run: CI=false yarn build
-    store_artifacts:
-      path: ./build
+      - store_artifacts:
+          path: ./build
 workflows:
   version: 2
   run_build:
