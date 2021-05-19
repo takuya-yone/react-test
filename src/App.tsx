@@ -45,6 +45,7 @@ const App: React.FunctionComponent = () => {
       <Link to="/pageA">pageA</Link>
       <Link to="/pageB">pageB</Link> */}
       <Switch>
+        <p>App Runner!!!!!</p>
 
       <Route path="/pageA" component={pageA}></Route> 
       <Route path="/pageB" component={pageB}></Route>
